@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = config("DJANGO_SECRET_KEY") # You can add fallback but just leave it as it is
+SECRET_KEY = config("SECRET_KEY") # You can add fallback but just leave it as it is
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config("DEBUG", True)
+DEBUG = config("DEBUG", cast=bool)
 
 
 # ALLOWED_HOSTS = ("orca-app-8r5xc.ondigitalocean.app", "127.0.0.1", ".localhost")
