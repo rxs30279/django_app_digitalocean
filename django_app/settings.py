@@ -30,8 +30,8 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 DEBUG = config("DEBUG", True)
 
 
-# ALLOWED_HOSTS = ("orca-app-8r5xc.ondigitalocean.app", "127.0.0.1", ".localhost")
-ALLOWED_HOSTS = config("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+ALLOWED_HOSTS = ("orca-app-8r5xc.ondigitalocean.app", "127.0.0.1", ".localhost")
+#ALLOWED_HOSTS = config("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
 
 # Application definition
