@@ -14,7 +14,7 @@ from pathlib import Path
 import os
 import sys
 import dj_database_url
-from decouple import config
+from decouple import config, Csv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,10 +29,10 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool, default=True)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS')
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 #ALLOWED_HOSTS = ( "127.0.0.1", ".localhost")
 #ALLOWED_HOSTS = config("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
-
+#[orca-app-8r5xc.ondigitalocean.app,127.0.0.1,.localhost]
 
 # Application definition
 
